@@ -6,9 +6,10 @@ Real-time simulation of cable behaviors, such as:
 - overlapping cables - they have collisions with each other and can be lifted and moved
 
 <br>
-Cable behavior video: https://www.youtube.com/watch?v=uCyIoAziExc
+Cable behavior video: [youtube.com/hrober/cables-physics](https://www.youtube.com/watch?v=uCyIoAziExc)
 
-The whole system was used in-game named Errata. Errata trailer: https://youtu.be/JyS9zIQbpxQ
+The whole system was used in-game named Errata.<br>
+Errata trailer: [youtube.com/errata-trailer](https://www.youtube.com/watch?v=JyS9zIQbpxQ)
 
 ## Interesting parts
 
