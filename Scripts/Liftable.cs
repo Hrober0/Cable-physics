@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Liftable : Interactable
+public class Liftable : MonoBehaviour
 {
     [field: SerializeField] public bool IsLift { get; private set; } = false;
     [field: SerializeField] public Vector3 LiftDirectionOffset { get; private set; } = Vector3.zero;
@@ -12,12 +12,14 @@ public class Liftable : Interactable
     public Rigidbody Rigidbody { get; protected set; }
     private readonly List<(GameObject, int)> defaultLayers = new List<(GameObject obj, int defaultLayer)>();
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
         Rigidbody = GetComponent<Rigidbody>();
     }
 
+    /// <summary>
+    /// Set object as picked up, change layer and physic
+    /// </summary>
     public virtual void PickUp(int layer)
     {
         if (IsLift)
@@ -36,6 +38,10 @@ public class Liftable : Interactable
 
         IsLift = true;
     }
+
+    /// <summary>
+    /// Return to default state
+    /// </summary>
     public virtual void Drop()
     {
         if (!IsLift)

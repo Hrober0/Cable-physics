@@ -14,7 +14,6 @@ public class PhysicCable : MonoBehaviour
     [SerializeField, Min(1f)] private float springForce = 200;
     [SerializeField, Min(1f)] private float brakeLengthMultiplier = 2f;
     [SerializeField, Min(0.1f)] private float minBrakeTime = 1f;
-    [SerializeField] public bool allowSaved = true;
     private float brakeLength;
     private float timeToBrake = 1f;
 
@@ -24,8 +23,8 @@ public class PhysicCable : MonoBehaviour
     [SerializeField] private GameObject connector0;
     [SerializeField] private GameObject point0;
 
-    private List<Transform> points;
-    private List<Transform> connectors;
+    private List<Transform> points = new List<Transform>();;
+    private List<Transform> connectors = end.GetComponent<Connector>();
 
     private const string cloneText = "Part";
 
@@ -169,36 +168,7 @@ public class PhysicCable : MonoBehaviour
 
         brakeLength = space * numberOfPoints * brakeLengthMultiplier + 2f;
 
-        points = new List<Transform>();
-        connectors = new List<Transform>();
-
-        points.Add(start.transform);
-        points.Add(point0.transform);
-
-        connectors.Add(connector0.transform);
-
-        for (int i = 1; i < numberOfPoints; i++)
-        {
-            Transform conn = transform.Find(ConnectorName(i));
-            if (conn == null)
-                Debug.LogWarning("Dont found connector number " + i);
-            else
-                connectors.Add(conn);
-
-            Transform point = transform.Find(PointName(i));
-            if (conn == null)
-                Debug.LogWarning("Dont found point number " + i);
-            else
-                points.Add(point);
-        }
-
-        Transform endConn = transform.Find(ConnectorName(numberOfPoints));
-        if (endConn == null)
-            Debug.LogWarning("Dont found connector number " + numberOfPoints);
-        else
-            connectors.Add(endConn);
-
-        points.Add(end.transform);
+        UpdatePointsList();
     }
 
     private void Update()
@@ -248,6 +218,41 @@ public class PhysicCable : MonoBehaviour
         }
     }
 
+    private void UpdatePointsList()
+    {
+        points.Clear();
+        connectors.Clear();
+
+        points.Add(start.transform);
+        points.Add(point0.transform);
+
+        connectors.Add(connector0.transform);
+
+        for (int i = 1; i < numberOfPoints; i++)
+        {
+            Transform conn = transform.Find(ConnectorName(i));
+            if (conn == null)
+                Debug.LogWarning("Dont found connector number " + i);
+            else
+                connectors.Add(conn);
+
+            Transform point = transform.Find(PointName(i));
+            if (conn == null)
+                Debug.LogWarning("Dont found point number " + i);
+            else
+                points.Add(point);
+        }
+
+        Transform endConn = transform.Find(ConnectorName(numberOfPoints));
+        if (endConn == null)
+            Debug.LogWarning("Dont found connector number " + numberOfPoints);
+        else
+            connectors.Add(endConn);
+
+        points.Add(end.transform);
+    }
+
+
     private Vector3 CountConPos(Vector3 start, Vector3 end) => (start + end) / 2f;
     private Vector3 CountSizeOfCon(Vector3 start, Vector3 end) => new Vector3(size, size, (start - end).magnitude / 2f);
     private Quaternion CountRoationOfCon(Vector3 start, Vector3 end) => Quaternion.LookRotation(end - start, Vector3.right);
@@ -285,5 +290,4 @@ public class PhysicCable : MonoBehaviour
     public Connector StartConnector => startConnector;
     public Connector EndConnector => endConnector;
     public IReadOnlyList<Transform> Points => points;
-    public bool AllowSaved => allowSaved;
 }

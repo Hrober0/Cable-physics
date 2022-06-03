@@ -14,6 +14,9 @@ public class PhysicCableCon : Liftable
         _connector = gameObject.GetComponent<Connector>();
     }
 
+    /// <summary>
+    /// Drop cable. If is selected object is a valid connector then connect to it 
+    /// </summary>
     public override void Drop()
     {
         base.Drop();
@@ -30,6 +33,10 @@ public class PhysicCableCon : Liftable
             }
         }
     }
+
+    /// <summary>
+    /// Pick up cable. If it is connected then disconnect
+    /// </summary>
     public override void PickUp(int layer)
     {
         base.PickUp(layer);
@@ -37,11 +44,12 @@ public class PhysicCableCon : Liftable
         if (_connector.ConnectedTo)
             _connector.Disconnect(true);
 
-
-
         StartCoroutine(UpdatePositionOfPreviouesCable());
     }
 
+    /// <summary>
+    /// Method used to smooth cable behavior when it is lifted
+    /// </summary>
     private IEnumerator UpdatePositionOfPreviouesCable()
     {
         PhysicCable cable = GetComponentInParent<PhysicCable>();
