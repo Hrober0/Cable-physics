@@ -6,7 +6,8 @@ Real-time simulation of cable behaviors, such as:
 - overlapping cables - they have collisions with each other and can be lifted and moved
 
 <br>
-Cable behavior video: [youtube.com/hrober/cables-physics](https://www.youtube.com/watch?v=uCyIoAziExc)
+
+Cable behavior video: [youtube.com/hrober/cables-physics](https://youtu.be/uCyIoAziExc)
 
 The whole system was used in-game named Errata.<br>
 Errata trailer: [youtube.com/errata-trailer](https://www.youtube.com/watch?v=JyS9zIQbpxQ)
@@ -14,10 +15,10 @@ Errata trailer: [youtube.com/errata-trailer](https://www.youtube.com/watch?v=JyS
 ## Interesting parts
 
 Main cable script:<br>
-https://github.com/Hrober0/Cable-physics/blob/main/Scripts/PhysicCable.cs
+[github.com/Hrober0/Cable-physics/Scripts/PhysicCable.cs](https://github.com/Hrober0/Cable-physics/blob/main/Scripts/PhysicCable.cs)
 
 Cable connector script:<br>
-https://github.com/Hrober0/Cable-physics/blob/main/Scripts/Connector.cs
+[github.com/Hrober0/Cable-physics/Scripts/Connector.cs](https://github.com/Hrober0/Cable-physics/blob/main/Scripts/Connector.cs)
 
 
 ## Used Technologies
