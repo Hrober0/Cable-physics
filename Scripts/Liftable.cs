@@ -12,7 +12,7 @@ public class Liftable : MonoBehaviour
     public Rigidbody Rigidbody { get; protected set; }
     private readonly List<(GameObject, int)> defaultLayers = new List<(GameObject obj, int defaultLayer)>();
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         Rigidbody = GetComponent<Rigidbody>();
     }
