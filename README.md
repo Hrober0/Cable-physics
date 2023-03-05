@@ -23,4 +23,12 @@ Cable connector script:<br>
 
 ## Used Technologies
 
-#### Unity and C#
+#### Unity
+#### C#
+
+
+## Used Packages
+
+#### NaughtyAttributes
+Description:  Extension of the unity editor options, such as buttons<br>
+Link: https://github.com/dbrizov/NaughtyAttributes
