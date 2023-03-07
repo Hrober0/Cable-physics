@@ -1,4 +1,4 @@
-# Cable physics made with unity
+# Cable physics
 Real-time simulation of cable behaviors, such as:
 - move - connectors  that can be lifted and moved
 - connect to the connector - keeps divided into colors and male and female connectors 
@@ -7,19 +7,34 @@ Real-time simulation of cable behaviors, such as:
 
 <br>
 
-Cable behavior video: [youtube.com/hrober/cables-physics](https://youtu.be/uCyIoAziExc)
+Cable behavior demonstration video: [youtube.com/Hrober/cables-physics](https://youtu.be/uCyIoAziExc)
 
 The whole system was used in-game named Errata.<br>
-Errata trailer: [youtube.com/errata-trailer](https://www.youtube.com/watch?v=JyS9zIQbpxQ)
+Errata trailer: [youtube.com/Errata/errata-trailer](https://www.youtube.com/watch?v=JyS9zIQbpxQ)
 
-## Interesting parts
+## Project structure
+
+#### Cables scripts
 
 Main cable script:<br>
-[github.com/Hrober0/Cable-physics/Scripts/PhysicCable.cs](https://github.com/Hrober0/Cable-physics/blob/main/Scripts/PhysicCable.cs)
+[github.com/Hrober0/Cable-physics/Assets/PhysicCalbes/Scripts/PhysicCable.cs](https://github.com/Hrober0/Cable-physics/blob/main/Assets/PhysicCalbes/Scripts/PhysicCable.cs)
 
 Cable connector script:<br>
-[github.com/Hrober0/Cable-physics/Scripts/Connector.cs](https://github.com/Hrober0/Cable-physics/blob/main/Scripts/Connector.cs)
+[github.com/Hrober0/Cable-physics/Assets/PhysicCalbes/Scripts/Scripts/Connector.cs](https://github.com/Hrober0/Cable-physics/blob/main/Assets/PhysicCalbes/Scripts/Connector.cs)
 
+#### Interactions scripts
+Scripts required to interact with cables:<br>
+[github.com/Hrober0/Assets/Interactions](https://github.com/Hrober0/Cable-physics/tree/main/Assets/Interactions)<br>
+(Whose dependencies can be easily removed)
+
+#### Sample player controller
+Sample first-person player controller used to show sample of interaction with cables:<br>
+[github.com/Hrober0/Assets/SamplePlayerController](https://github.com/Hrober0/Cable-physics/tree/main/Assets/SamplePlayerController)
+
+#### Sample scene
+Sample scene used to show sample of interaction with cables:<br>
+[github.com/Hrober0/Assets/Scenes](https://github.com/Hrober0/Cable-physics/tree/main/Assets/Scenes)<br>
+Scene contains plyer, basic environment and some cables and connectors. 
 
 ## Used Technologies
 
@@ -30,5 +45,6 @@ Cable connector script:<br>
 ## Used Packages
 
 #### NaughtyAttributes
-Description:  Extension of the unity editor options, such as buttons<br>
+NaughtyAttributes is an extension for the Unity Inspector.<br>
+It expands the range of attributes that Unity provides so that you can create powerful inspectors without the need of custom editors or property drawers. It also provides attributes that can be applied to non-serialized fields or functions.<br>
 Link: https://github.com/dbrizov/NaughtyAttributes
