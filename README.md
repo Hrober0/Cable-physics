@@ -7,7 +7,9 @@ Real-time simulation of wires behaviors, such as:
 
 <br>
 
-Cable behavior demonstration video: [youtube.com/Hrober/cables-physics](https://youtu.be/uCyIoAziExc)
+![image](https://github.com/user-attachments/assets/184e9ca2-6c72-4899-82c8-bdc9801bc98a)
+Wires behavior demonstration video: [youtube.com/Hrober/cables-physics](https://youtu.be/uCyIoAziExc)
+<br>
 
 The whole system was used in-game named Errata.<br>
 Errata trailer: [youtube.com/Errata/errata-trailer](https://www.youtube.com/watch?v=JyS9zIQbpxQ)
