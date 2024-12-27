@@ -1,5 +1,5 @@
-# Cable physics
-Real-time simulation of cable behaviors, such as:
+# Wires physics
+Real-time simulation of wires behaviors, such as:
 - move - connectors  that can be lifted and moved
 - connect to the connector - keeps divided into colors and male and female connectors 
 - stretching - the cable can extend to the designated length, after exceeding it, the cable disconnects from the connector, returning to the neutral length
